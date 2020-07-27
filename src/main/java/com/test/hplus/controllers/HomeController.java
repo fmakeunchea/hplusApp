@@ -2,7 +2,7 @@ package com.test.hplus.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller
 public class HomeController {
@@ -18,4 +18,14 @@ public class HomeController {
             return "search";
 
    }
+    @GetMapping("/goToLogin")
+    public String goToLogin() {
+        System.out.println("going to search page");
+        return "login";
+    }
+    @GetMapping("/goToRegistration")
+    public String goToRegistration() {
+        System.out.println("going to search page");
+        return "register";
+    }
 }
