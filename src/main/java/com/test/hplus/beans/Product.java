@@ -9,7 +9,7 @@ public class Product {
     @Id
     private int id;
     private String name;
-    private String imagepath;
+    private String imagePath;
 
     public int getId() {
         return id;
@@ -27,11 +27,11 @@ public class Product {
         this.name = name;
     }
 
-    public String getImagepath() {
-        return imagepath;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImagepath(String imagepath) {
-        this.imagepath = imagepath;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

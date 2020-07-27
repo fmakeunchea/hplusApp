@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-Sök
+
 <body>
 <header id="home" class="header">
     <nav class="nav" role="navigation">
@@ -15,7 +15,7 @@ Sök
                 <a href="#home"><img src="images/hpluslogo.svg" alt="Logo - H Plus Sports"></a>
             </div><!-- branding -->
             <ul class="navbar">
-                <li><a href="/home">home</a></li>
+                <li><a href="">home</a></li>
                 <li><a href="/goToLogin">login</a></li>
                 <li><a href="/goToSearch">search</a></li>
                 <li><a href="redirect">linkedin</a></li>
