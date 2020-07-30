@@ -35,19 +35,5 @@ public class HomeController {
         System.out.println("going to register page");
         return "register";
     }
-    @ModelAttribute("newuser")
-    public User getDefaultUser(){
-        return new User();
-    }
-
-    @ModelAttribute("genderItems")
-    public List<String> getGenderItems(){
-        return Arrays.asList(new String[]{"Male", "Female", "Other"});
-    }
-
-    @ModelAttribute("login")
-    public Login getDefaultLogin(){
-        return new Login();
-    }
 
 }

@@ -22,9 +22,10 @@ public class LoginController {
             throw new ApplicationException("User not found");        }
         return "search";
     }
+    /*
     @ExceptionHandler(ApplicationException.class)
     public String handleException(){
         System.out.println("In exception handler of login controller");
         return "error";
-    }
+    }*/
 }

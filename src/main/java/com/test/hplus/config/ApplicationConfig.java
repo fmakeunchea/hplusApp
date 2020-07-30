@@ -4,14 +4,18 @@ import com.test.hplus.convertors.StringToEnumConvertor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import java.util.List;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Configuration
 @ComponentScan(basePackages = "com.test.hplus")
@@ -34,5 +38,17 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new StringToEnumConvertor());
+    }
+
+    @Override
+    protected void configureAsyncSupport(AsyncSupportConfigurer configurer) {
+        configurer.setDefaultTimeout(5000);
+        configurer.setTaskExecutor(mvcTaskExcecutor());
+    }
+        @Bean
+                public AsyncTaskExecutor mvcTaskExcecutor() {
+            ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+            threadPoolTaskExecutor.setThreadNamePrefix("hplusApp.thread");
+        return threadPoolTaskExecutor;
     }
 }
